@@ -1,0 +1,71 @@
+# Список расследований
+cases:
+  ufo-crash:
+    name: "Крушение НЛО"
+    description: "Местные жители сообщают о странном объекте, упавшем с неба"
+    difficulty: "MEDIUM"
+    required-level: 5
+    evidence:
+      - "ALIEN_ALLOY"
+      - "BLACK_BOX"
+      - "STRANGE_GOO"
+    rewards:
+      exp: 150
+      items: ["ALIEN_TECH", "FBI_BADGE"]
+    locations: ["FOREST", "DESERT"]
+
+  ghost-town:
+    name: "Призрачный город"
+    description: "Целое поселение опустело за одну ночь. Слышны голоса"
+    difficulty: "HARD"
+    required-level: 10
+    evidence:
+      - "GHOST_PHOTO"
+      - "SPIRIT_BOX_RECORDING"
+      - "COLD_SPOT_DATA"
+    rewards:
+      exp: 200
+      items: ["SPIRIT_BOX", "THERMAL_CAMERA"]
+    locations: ["PLAINS", "VILLAGE"]
+
+  mutant-attack:
+    name: "Атака мутантов"
+    description: "Существа, похожие на людей, но не люди. Нападают ночью"
+    difficulty: "EXPERT"
+    required-level: 15
+    evidence:
+      - "MUTANT_DNA"
+      - "EXPERIMENTAL_SERUM"
+      - "LAB_REPORTS"
+    rewards:
+      exp: 300
+      items: ["ANTIDOTE", "ADVANCED_DETECTOR"]
+    locations: ["SWAMP", "LAB"]
+
+  shadow-conspiracy:
+    name: "Теневой заговор"
+    description: "Люди в черном появляются и исчезают. Стирают память"
+    difficulty: "LEGENDARY"
+    required-level: 20
+    evidence:
+      - "SYNDICATE_DOCUMENT"
+      - "MEMORY_ERASER"
+      - "TRUTH_SEEKER_ARTIFACT"
+    rewards:
+      exp: 500
+      items: ["TRUTH_SEEKER", "SYNDICATE_KEY"]
+    locations: ["CITY", "BUNKER"]
+
+  flukeman-sewer:
+    name: "Канализационный ужас"
+    description: "В канализационной системе замечено странное существо"
+    difficulty: "HARD"
+    required-level: 12
+    evidence:
+      - "PARASITE_SAMPLE"
+      - "SEWER_MAP"
+      - "INFECTED_WATER"
+    rewards:
+      exp: 250
+      items: ["HAZMAT_SUIT", "FLAME_THROWER"]
+    locations: ["SEWER", "SWAMP"]

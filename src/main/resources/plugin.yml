@@ -1,0 +1,27 @@
+name: XCraftFiles
+version: 1.0.0
+main: com.github.xcraftfiles.XCraftFiles
+api-version: "1.21"
+description: Паранормальные расследования в стиле Секретных материалов
+author: GitHubAgent
+website: https://github.com/yourname/x-craft-files
+prefix: "X-Files"
+
+commands:
+  xfiles:
+    description: Основная команда X-Craft Files
+    usage: /xfiles <reload|status>
+    permission: xcraftfiles.use
+
+permissions:
+  xcraftfiles.*:
+    description: Все разрешения X-Craft Files
+    children:
+      xcraftfiles.use: true
+      xcraftfiles.admin: true
+  xcraftfiles.use:
+    description: Использование основных команд
+    default: true
+  xcraftfiles.admin:
+    description: Административные права
+    default: op

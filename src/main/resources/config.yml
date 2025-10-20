@@ -1,0 +1,77 @@
+# X-Craft Files Configuration
+# Настройки паранормального плагина
+
+# Настройки Telegram
+telegram:
+  enabled: true
+  bot-token: "8263486505:AAHs0FDTQJrNRoMd1loLaNASWrp4SfKEuRc"
+  chat-id: "-1002935953089"
+  thread-id: 434
+  broadcast-events: true
+  broadcast-investigations: true
+
+# Настройки событий
+events:
+  # Базовые вероятности
+  base-event-chance: 15
+  # Интервал проверки событий (в тиках)
+  event-check-interval: 1200
+  
+  # Конкретные события
+  ufo-sighting:
+    enabled: true
+    chance: 8
+    min-players: 2
+  alien-abduction:
+    enabled: true
+    chance: 5
+    min-players: 3
+  ghost-activity:
+    enabled: true
+    chance: 12
+    min-players: 1
+  mutant-attack:
+    enabled: true
+    chance: 6
+    min-players: 2
+  shadow-creature:
+    enabled: true
+    chance: 4
+    min-players: 3
+
+# Настройки существ
+entities:
+  grey-alien:
+    health: 50
+    damage: 8
+    spawn-chance: 5
+    night-only: true
+  yeti:
+    health: 80
+    damage: 12
+    spawn-chance: 3
+    biomes: ["TAIGA", "SNOWY_TAIGA"]
+  ghost:
+    health: 30
+    damage: 6
+    spawn-chance: 10
+    structures: ["MANSION", "MINESHAFT"]
+  flukeman:
+    health: 40
+    damage: 10
+    spawn-chance: 4
+    structures: ["SEWER", "SWAMP_HUT"]
+
+# Настройки расследований
+investigations:
+  max-active-cases: 3
+  case-timeout: 3600
+  evidence-required: 3
+  reward-exp: 100
+  reward-items: ["PARANORMAL_EVIDENCE", "TRUTH_SEEKER"]
+
+# Настройки мировых структур
+world:
+  generate-structures: true
+  structure-chance: 20
+  max-structures-per-chunk: 1
