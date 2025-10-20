@@ -122,8 +122,8 @@ public class EventManager {
     private void triggerUFOSighting(Location location) {
         World world = location.getWorld();
         world.strikeLightningEffect(location);
-        world.playSound(location, Sound.minecraft:entity.lightning_bolt.thunder, 1.0f, 0.5f);
-        world.spawnParticle(Particle.minecraft:firework, location, 100, 10, 20, 10);
+        world.playSound(location, Sound.entity.lightning_bolt.thunder, 1.0f, 0.5f);
+        world.spawnParticle(Particle.firework, location, 100, 10, 20, 10);
         
         String coords = location.getBlockX() + ", " + location.getBlockZ();
         String message = "👽 НЛО замечено в секторе " + coords + "! ТРЕВОГА!";
@@ -136,11 +136,11 @@ public class EventManager {
     private void triggerGhostActivity(Location location) {
         World world = location.getWorld();
         // Заменяем ENTITY_GHOST_AMBIENT на существующие звуки
-        world.playSound(location, Sound.minecraft:entity.phantom.ambient, 1.0f, 0.8f);
-        world.playSound(location, Sound.minecraft:entity.vex.ambient, 0.8f, 0.5f);
-        world.playSound(location, Sound.minecraft:block.conduit.ambient, 0.6f, 1.2f);
-        world.spawnParticle(Particle.minecraft:soul, location, 50, 3, 3, 3);
-        world.spawnParticle(Particle.minecraft:soul_fire_flame, location, 30, 2, 2, 2);
+        world.playSound(location, Sound.entity.phantom.ambient, 1.0f, 0.8f);
+        world.playSound(location, Sound.entity.vex.ambient, 0.8f, 0.5f);
+        world.playSound(location, Sound.block.conduit.ambient, 0.6f, 1.2f);
+        world.spawnParticle(Particle.soul, location, 50, 3, 3, 3);
+        world.spawnParticle(Particle.soul_fire_flame, location, 30, 2, 2, 2);
         
         String coords = location.getBlockX() + ", " + location.getBlockZ();
         Bukkit.broadcastMessage("§3👻 §bПаранормальная активность в " + coords + ". ЭМП зашкаливает!");
@@ -151,10 +151,10 @@ public class EventManager {
 
     private void triggerAlienAbduction(Location location) {
         World world = location.getWorld();
-        world.playSound(location, Sound.minecraft:entity.enderman.teleport, 1.0f, 0.7f);
-        world.playSound(location, Sound.minecraft:block.beacon.ambient, 0.8f, 1.5f);
-        world.spawnParticle(Particle.minecraft:portal, location, 100, 2, 2, 2);
-        world.spawnParticle(Particle.minecraft:reverse_portal, location, 50, 3, 3, 3);
+        world.playSound(location, Sound.entity.enderman.teleport, 1.0f, 0.7f);
+        world.playSound(location, Sound.block.beacon.ambient, 0.8f, 1.5f);
+        world.spawnParticle(Particle.portal, location, 100, 2, 2, 2);
+        world.spawnParticle(Particle.reverse_portal, location, 50, 3, 3, 3);
         
         String coords = location.getBlockX() + ", " + location.getBlockZ();
         Bukkit.broadcastMessage("§3👽 §4🚨 ЗАФИКСИРОВАНО ПОХИЩЕНИЕ! Координаты: " + coords);
@@ -165,8 +165,8 @@ public class EventManager {
 
     private void triggerMutantSighting(Location location) {
         World world = location.getWorld();
-        world.playSound(location, Sound.minecraft:entity.zombie.ambient, 1.0f, 0.8f);
-        world.playSound(location, Sound.minecraft:entity.hoglin.angry, 0.7f, 1.2f);
+        world.playSound(location, Sound.entity.zombie.ambient, 1.0f, 0.8f);
+        world.playSound(location, Sound.entity.hoglin.angry, 0.7f, 1.2f);
         
         String coords = location.getBlockX() + ", " + location.getBlockZ();
         Bukkit.broadcastMessage("§3🧬 §cМутант замечен в " + coords + "! Осторожно!");
@@ -177,10 +177,10 @@ public class EventManager {
 
     private void triggerShadowCreature(Location location) {
         World world = location.getWorld();
-        world.playSound(location, Sound.minecraft:entity.warden.ambient, 0.5f, 1.2f);
-        world.playSound(location, Sound.minecraft:entity.warden.angry, 0.3f, 1.5f);
-        world.spawnParticle(Particle.minecraft:squid_ink, location, 30, 2, 2, 2);
-        world.spawnParticle(Particle.minecraft:large_smoke, location, 20, 3, 3, 3);
+        world.playSound(location, Sound.entity.warden.ambient, 0.5f, 1.2f);
+        world.playSound(location, Sound.entity.warden.angry, 0.3f, 1.5f);
+        world.spawnParticle(Particle.squid_ink, location, 30, 2, 2, 2);
+        world.spawnParticle(Particle.large_smoke, location, 20, 3, 3, 3);
         
         String coords = location.getBlockX() + ", " + location.getBlockZ();
         Bukkit.broadcastMessage("§3🌑 §8Теневое существо в " + coords + "! Не приближаться!");
@@ -191,16 +191,16 @@ public class EventManager {
 
     private void triggerStrangeSounds(Location location) {
         // Заменяем ENTITY_ELDER_GUARDIAN_AMBIENT на другие звуки
-        location.getWorld().playSound(location, Sound.minecraft:entity.ender_dragon.growl, 0.3f, 0.5f);
-        location.getWorld().playSound(location, Sound.minecraft:entity.vex.ambient, 0.5f, 0.3f);
-        location.getWorld().playSound(location, Sound.minecraft:entity.warden.roar, 0.2f, 0.8f);
+        location.getWorld().playSound(location, Sound.entity.ender_dragon.growl, 0.3f, 0.5f);
+        location.getWorld().playSound(location, Sound.entity.vex.ambient, 0.5f, 0.3f);
+        location.getWorld().playSound(location, Sound.entity.warden.roar, 0.2f, 0.8f);
         Bukkit.broadcastMessage("§3🔊 §bСлышны странные звуки... Шепот из ниоткуда...");
     }
 
     private void triggerEMFReading(Location location) {
         Player nearest = getNearestPlayer(location);
         if (nearest != null) {
-            nearest.playSound(nearest.getLocation(), Sound.minecraft:block.note_block.bit, 1.0f, 2.0f);
+            nearest.playSound(nearest.getLocation(), Sound.block.note_block.bit, 1.0f, 2.0f);
             int strength = random.nextInt(5) + 1;
             nearest.sendMessage("§3📡 §bЭМП сигнал: §e" + strength + "/5§b. Источник рядом...");
             
@@ -234,15 +234,15 @@ public class EventManager {
         
         String whisper = whispers[random.nextInt(whispers.length)];
         player.sendTitle("§8⚡", "§7" + whisper, 10, 60, 20);
-        player.playSound(player.getLocation(), Sound.minecraft:entity.warden.heartbeat, 0.8f, 0.5f);
+        player.playSound(player.getLocation(), Sound.entity.warden.heartbeat, 0.8f, 0.5f);
         player.sendMessage("§8[ШЕПОТ В РАЗУМЕ] §7" + whisper);
     }
 
     private void triggerShadowFigure(Location location) {
         World world = location.getWorld();
-        world.playSound(location, Sound.minecraft:entity.warden.sniff, 1.0f, 0.8f);
-        world.spawnParticle(Particle.minecraft:soul, location, 100, 2, 3, 2);
-        world.spawnParticle(Particle.minecraft:large_smoke, location, 50, 3, 4, 3);
+        world.playSound(location, Sound.entity.warden.sniff, 1.0f, 0.8f);
+        world.spawnParticle(Particle.soul, location, 100, 2, 3, 2);
+        world.spawnParticle(Particle.large_smoke, location, 50, 3, 4, 3);
         
         Bukkit.broadcastMessage("§8🌑 §0Теневая фигура замечена... Она наблюдает...");
     }
@@ -264,7 +264,7 @@ public class EventManager {
 
     private void triggerEntityStare(Player player) {
         player.sendTitle("§c👁", "§4Кто-то смотрит на тебя", 10, 60, 20);
-        player.playSound(player.getLocation(), Sound.minecraft:entity.ender_dragon.growl, 0.3f, 2.0f);
+        player.playSound(player.getLocation(), Sound.entity.ender_dragon.growl, 0.3f, 2.0f);
         
         // Создаем звуки вокруг игрока
         for (int i = 0; i < 8; i++) {
@@ -273,13 +273,13 @@ public class EventManager {
                 random.nextInt(5),
                 random.nextInt(21) - 10
             );
-            player.getWorld().playSound(soundLoc, Sound.minecraft:entity.creeper.primed, 0.1f, 0.5f);
+            player.getWorld().playSound(soundLoc, Sound.entity.creeper.primed, 0.1f, 0.5f);
         }
     }
 
     private void triggerGravityAnomaly(Location location) {
         World world = location.getWorld();
-        world.playSound(location, Sound.minecraft:entity.iron_golem.damage, 1.0f, 0.1f);
+        world.playSound(location, Sound.entity.iron_golem.damage, 1.0f, 0.1f);
         
         // Подбрасываем ближайших игроков
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -292,7 +292,7 @@ public class EventManager {
 
     private void triggerMemoryLoss(Player player) {
         player.sendTitle("§d💫", "§5Провалы в памяти...", 10, 50, 20);
-        player.playSound(player.getLocation(), Sound.minecraft:block.conduit.deactivate, 1.0f, 0.8f);
+        player.playSound(player.getLocation(), Sound.block.conduit.deactivate, 1.0f, 0.8f);
         
         // Случайно очищаем инвентарь (не важные предметы)
         if (random.nextBoolean()) {
