@@ -249,7 +249,7 @@ public class EventManager {
 
     private void triggerTimeAnomaly(Player player) {
         player.sendTitle("§e⏰", "§6Аномалия времени обнаружена", 10, 40, 10);
-        player.playSound(player.getLocation(), Sound.minecraft:block.bell.use, 1.0f, 0.3f);
+        player.playSound(player.getLocation(), Sound.block.bell.use, 1.0f, 0.3f);
         
         // Случайный телепорт на несколько блоков
         Location newLoc = player.getLocation().add(
