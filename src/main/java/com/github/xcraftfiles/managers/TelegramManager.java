@@ -72,13 +72,14 @@ public class TelegramManager {
                    .replace("\t", "\\t");
     }
 
-    public void broadcastEvent(String eventType, String location, String playerName) {
-        String message = "🚨 ПАРАНОРМАЛЬНОЕ СОБЫТИЕ\n" +
-                        "Тип: " + eventType + "\n" +
-                        "Местоположение: " + location + "\n" +
-                        "Агент: " + (playerName != null ? playerName : "Неизвестно") + "\n" +
-                        "Время: " + java.time.LocalDateTime.now() + "\n\n" +
-                        "Требуется немедленное расследование!";
-        sendToTelegram(message);
-    }
+public void broadcastEvent(String eventType, String location, String playerName) {
+    String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss"));
+    String message = "🚨 ПАРАНОРМАЛЬНОЕ СОБЫТИЕ\n" +
+                    "📊 Тип: " + eventType + "\n" +
+                    "📍 Местоположение: " + location + "\n" +
+                    "🕵️ Агент: " + (playerName != null ? playerName : "Неизвестно") + "\n" +
+                    "🕒 Время: " + timestamp + "\n\n" +
+                    "🔍 Требуется немедленное расследование!";
+    sendToTelegram(message);
+}
 }
